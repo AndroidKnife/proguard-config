@@ -16,16 +16,16 @@
 #   public *;
 #}
 
-##################### retrofit ############
+##################### retrofit 1.9.0 ############
 -dontwarn retrofit.**
 -keep class retrofit.** { *; }
 -keepattributes Signature
 -keepattributes Exceptions
 
-#################### OKIO #################
+#################### OKIO 1.4.0 #################
 -dontwarn okio.**
 
-################### OK HTTP ###########
+################### OK HTTP 2.4.0 ###########
 -keepattributes *Annotation*
 -keep class com.squareup.okhttp.** { *; }
 -keep interface com.squareup.okhttp.** { *; }
@@ -33,34 +33,35 @@
 
 -keep class sun.misc.Unsafe { *; }
 
-##################### glide ############
+##################### glide okhttp-integration:1.3.1 ############
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
     **[] $VALUES;
     public *;
 }
 
-# LeakCanary
+# LeakCanary 1.3.1
 -keep class org.eclipse.mat.** { *; }
 -keep class com.squareup.leakcanary.** { *; }
+-dontwarn com.squareup.leakcanary.**
 
-##################### Baidu Push ############
+##################### Baidu Push 4.5.3.48 ############
 -dontwarn com.baidu.**
 -keep class com.baidu.**{*; }
 
-#################### Android Event Bus #######
+#################### Android Event Bus latest #######
 -keep class org.simple.** { *; }
 -keep interface org.simple.** { *; }
 -keepclassmembers class * {
     @org.simple.eventbus.Subscriber <methods>;
 }
 
-################## TD #########
+################## TD 1.2.79 #########
 -keep public class com.tendcloud.tenddata.** { public protected *;}
 -dontwarn com.tendcloud.tenddata.**
 
 ## ----------------------------------
-##      sharesdk
+##      sharesdk 2.6.2
 ## ----------------------------------
 -keep class cn.sharesdk.**{*;}
 -keep class com.sina.**{*;}
@@ -73,7 +74,7 @@
 -keep class com.mob.tools.**{*;}
 -dontwarn com.mob.tools.**
 
-# rxjava
+# rxjava 1.0.15
 -dontwarn sun.misc.**
 -keep class rx.schedulers.Schedulers {
     public static <methods>;
@@ -95,8 +96,3 @@
     long producerNode;
     long consumerNode;
 }
-
-# LeakCanary
--keep class org.eclipse.mat.** { *; }
--keep class com.squareup.leakcanary.** { *; }
--dontwarn com.squareup.leakcanary.**
