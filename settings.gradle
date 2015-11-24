@@ -1,1 +1,1 @@
-include ':proguard', ':proguardexample'
+include ':proguardlib', ':proguardexample'
