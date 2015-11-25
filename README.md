@@ -58,6 +58,7 @@ android {
 Ref
 -----
 [BuildType - Android Plugin 1.5.0 DSL Reference](http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:consumerProguardFiles)
+
 [krschultz/android-proguard-snippets](https://github.com/krschultz/android-proguard-snippets)
 
 License
