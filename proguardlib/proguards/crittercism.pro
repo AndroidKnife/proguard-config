@@ -1,2 +1,0 @@
--keep public class com.crittercism.**
--keepclassmembers public class com.crittercism.* { *; }

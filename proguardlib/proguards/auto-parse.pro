@@ -1,2 +1,0 @@
--keep class auto.parse.** { *; }
--dontwarn auto.parse.**
