@@ -22,17 +22,7 @@ Usage
 -----
 Two usage is supported:
 
-**Usage 1**
-
-Add the `aar` to your dependencies:
-``` gradle
-dependencies {
-    ...
-    compile 'com.hwangjr.proguard:proguardconfig:1.0.1@aar'
-}
-```
-
-**Usage 2**
+**Usage 1 (Suggested)**
 
 Checkout the library and add the specific library proguard file:
 ``` gradle
@@ -54,6 +44,32 @@ android {
     }
 }
 ```
+Or just add the `.pro` file to the `proguards` folder:
+```
+android {
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            
+            // specific proguard files
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', fileTree(dir: 'proguards', include: '*.pro')
+        }
+    }
+}
+```
+
+**Usage 2 (May break your app proguard)**
+
+Add the `aar` to your dependencies:
+``` gradle
+dependencies {
+    ...
+    compile 'com.hwangjr.proguard:proguardconfig:1.0.1@aar'
+}
+```
+*Because of the so many proguard files, it may make your application not to be obfuscated completely.*
 
 Ref
 -----
